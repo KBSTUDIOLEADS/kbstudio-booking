@@ -3,9 +3,25 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="KB Studio Productions — India's leading luxury wedding photographers & cinematographers. Book your 2026–27 date. Packages from ₹90,000."/>
 <title>KB Studio Productions — 2026·27 Wedding Bookings</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -184,6 +200,13 @@ h1 em{font-style:italic;color:var(--gold)}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 .wa-cta{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:3px;transition:color .3s,border-color .3s}
 .wa-cta:hover{color:var(--gold);border-color:var(--gold)}
+/* Form steps */
+.form-steps{display:flex;gap:6px;margin-bottom:24px;align-items:center}
+.form-step-dot{width:28px;height:3px;background:var(--rule);transition:background .4s;border-radius:2px}
+.form-step-dot.active{background:var(--gold)}
+.form-step-label{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-left:8px}
+.form-step-panel{display:none}
+.form-step-panel.active{display:block}
 /* Form inputs — open grid style */
 .form-box{border:1px solid rgba(13,11,8,.1);background:var(--white);overflow:hidden}
 .form-grid{display:grid;grid-template-columns:1fr 1fr}
@@ -197,11 +220,19 @@ h1 em{font-style:italic;color:var(--gold)}
 .fg select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23B08D57' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:18px}
 .fg select option{background:#fff;color:var(--ink)}
 .fg textarea{resize:none;min-height:88px;line-height:1.7}
+.form-btn-row{display:flex;gap:10px}
+.form-next,.form-prev{flex:1;padding:17px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.36em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:10px}
+.form-next{background:var(--ink);color:var(--white)}
+.form-next:hover{background:var(--gold)}
+.form-prev{background:transparent;border:1px solid rgba(13,11,8,.15);color:var(--ink2)}
+.form-prev:hover{border-color:var(--ink);background:var(--ink);color:var(--white)}
 .form-submit{width:100%;padding:19px;background:var(--ink);color:var(--white);font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.38em;text-transform:uppercase;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;transition:background .3s,letter-spacing .3s}
 .form-submit:hover{background:var(--gold);letter-spacing:.44em}
 .form-submit:disabled{opacity:.5;cursor:not-allowed}
 .form-note{margin-top:16px;font-size:13px;color:var(--ink2);line-height:1.85}
 .form-note a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(176,141,87,.3)}
+.pricing-callout{margin-top:28px;padding:20px;border-left:3px solid var(--gold);background:rgba(176,141,87,.05);font-size:13.5px;line-height:1.85;color:var(--ink2)}
+.pricing-callout strong{color:var(--ink);display:block;font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;margin-bottom:6px}
 /* success */
 #successMsg{display:none;flex-direction:column;gap:18px;padding:48px 0}
 #successMsg.show{display:flex}
@@ -209,10 +240,10 @@ h1 em{font-style:italic;color:var(--gold)}
 .sh{font-family:'Bodoni Moda',serif;font-size:30px;font-weight:300;color:var(--ink)}
 .sp{font-size:13.5px;color:var(--muted);line-height:1.85;max-width:360px}
 
-/* ── STICKY IG DM BAR (mobile bottom) ── */
+/* ── STICKY WA BAR (mobile bottom) ── */
 .ig-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:700;padding:12px 5vw;background:var(--ink);border-top:1px solid rgba(255,255,255,.08);flex-direction:column;gap:8px}
 .ig-sticky-text{font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.45);text-transform:uppercase}
-.ig-sticky-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;background:var(--gold);color:var(--ink);font-size:9px;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;font-weight:500}
+.ig-sticky-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;background:#25D366;color:#fff;font-size:9px;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;font-weight:500}
 @media(max-width:768px){.ig-sticky{display:flex}}
 
 /* ── FLOATING IG BUTTON (desktop) ── */
@@ -291,12 +322,11 @@ footer{background:var(--ink);padding:28px 6vw;display:flex;justify-content:space
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a class="nav-brand" href="https://kbstudio.in">KB Studio Productions<span>Photography · Cinematography · India</span></a>
+  <a class="nav-brand" href="#">KB Studio Productions<span>Photography · Cinematography · India</span></a>
   <div class="nav-links">
-    <a class="nav-link" href="https://kbstudio.in/stories" target="_blank">Portfolio</a>
-    <a class="nav-link" href="https://kbstudio.in/service" target="_blank">Services</a>
-    <a class="nav-link" href="https://kbstudio.in/about-us" target="_blank">About</a>
-    <a class="nav-cta" href="#enquire">Book 2026–27</a>
+    <a class="nav-link" href="https://www.instagram.com/kbstudioproductions" target="_blank">Instagram DM</a>
+    <a class="nav-link" href="https://wa.me/919711177034?text=Hi!%20I'd%20like%20to%20enquire%20about%20KB%20Studio%20for%20my%20wedding." target="_blank">WhatsApp</a>
+    <a class="nav-cta" href="#enquire">Check Availability</a>
   </div>
 </nav>
 
@@ -324,7 +354,7 @@ footer{background:var(--ink);padding:28px 6vw;display:flex;justify-content:space
     <p class="hero-desc">India's leading luxury wedding photographers and cinematographers — crafting timeless stories across 20+ destinations worldwide since 2009.</p>
     <div class="hero-btns">
       <a class="btn-fill" href="#enquire">Check 2026–27 Availability <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn-ghost-dark" href="https://www.instagram.com/kbstudioproductions" target="_blank">View Portfolio</a>
+      <a class="btn-ghost-dark" href="https://wa.me/919711177034?text=Hi!%20I'd%20like%20to%20enquire%20about%20KB%20Studio%20for%20my%20wedding." target="_blank">💬 WhatsApp Us</a>
     </div>
   </div>
   <div class="hero-r">
@@ -486,40 +516,105 @@ footer{background:var(--ink);padding:28px 6vw;display:flex;justify-content:space
     <div class="form-left">
       <p class="s-tag">2026 · 2027 Season</p>
       <h2 class="s-h">Tell Us About<br/><em>Your Wedding</em></h2>
-      <p class="form-left-body">Share your details and we'll respond within 24 hours with availability and a personalised quote. Every enquiry is handled personally by our team — not a bot.</p>
-      <div class="avail-badge"><span class="avail-dot"></span>Limited 2026 Dates Available</div>
-      <div style="margin-top:14px;padding:16px 20px;background:var(--white);border-left:3px solid var(--gold);font-size:13px;line-height:1.75;color:var(--ink2)"><strong style="font-family:'Bodoni Moda',serif;font-size:15px;color:var(--ink);display:block;margin-bottom:4px">Packages start from ₹90,000</strong>for a single-day wedding coverage. Full-day photography, destination packages, cinematic films &amp; pre-wedding shoots available. Final pricing is tailored to your specific requirements.</div>
-      <br/><br/>
-      <a class="wa-cta" href="https://wa.me/919711177034?text=Hi%20KB%20Studio%2C%20I%20saw%20your%20ad%20and%20want%20to%20enquire%20about%202026%2F27%20availability." target="_blank">
+      <p class="form-left-body">Share a few details and we'll come back within 24 hours with availability and a personalised quote. Every enquiry is read personally by our team — never a bot.</p>
+      <div class="avail-badge"><span class="avail-dot"></span>Limited 2026 Dates Still Open</div>
+      <div class="pricing-callout">
+        <strong>Starting from ₹90,000</strong>
+        Single-day full wedding photography &amp; filming. Travel &amp; accommodation billed separately. Final pricing tailored to your exact requirements.
+      </div>
+      <br/>
+      <a class="wa-cta" href="https://wa.me/919711177034?text=Hi%20KB%20Studio%2C%20I%20want%20to%20enquire%20about%202026%2F27%20availability." target="_blank">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Prefer WhatsApp? Chat directly →
       </a>
     </div>
     <div>
       <div id="formWrap">
-        <form id="enquiryForm" name="wedding-enquiry" netlify netlify-honeypot="bot-field" onsubmit="submitForm(event)" novalidate><input type="hidden" name="form-name" value="wedding-enquiry"/><input type="hidden" name="bot-field" style="display:none"/>
-          <div class="form-box">
-            <div class="form-grid">
-              <div class="fg"><label>Your Name *</label><input type="text" name="name" placeholder="Full name" required/></div>
-              <div class="fg"><label>Partner's Name</label><input type="text" name="partner" placeholder="Partner's name"/></div>
-              <div class="fg"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required/></div>
-              <div class="fg"><label>Email Address *</label><input type="email" name="email" placeholder="your@email.com" required/></div>
-              <div class="fg"><label>Wedding Date</label><input type="date" name="date" style="color-scheme:light"/></div>
-              <div class="fg"><label>City / Venue</label><input type="text" name="venue" placeholder="e.g. Udaipur, Dubai, Bali"/></div>
-              <div class="fg"><label>Services Needed *</label><select name="services" required><option value="" disabled selected>Select a package</option><option>Photography Only (from ₹90K)</option><option>Videography / Cinematic Film Only</option><option>Photography + Film — Full Package</option><option>Pre-Wedding Shoot Only</option><option>Full Wedding + Pre-Wedding Combo</option><option>Multi-Day Wedding Coverage</option><option>Destination Wedding</option><option>Not Sure — Need Guidance</option></select></div>
-              <div class="fg"><label>Approximate Budget</label><select name="budget"><option value="" disabled selected>Select range</option><option>₹90K – ₹1.5L (Single Day)</option><option>₹1.5L – ₹3L (Multi Day)</option><option>₹3L – ₹5L (Full Wedding)</option><option>₹5L – ₹10L (Premium Package)</option><option>₹10L+ (Luxury / Destination)</option><option>Destination Wedding — International</option></select></div>
-              <div class="fg full"><label>Anything else we should know?</label><textarea name="message" placeholder="Tell us about your celebration, venues, special requirements…"></textarea></div>
-            </div>
-            <button type="submit" class="form-submit" id="submitBtn"><span id="submitText">Send My Enquiry</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <form id="enquiryForm" novalidate>
+          <!-- Step indicators -->
+          <div class="form-steps">
+            <div class="form-step-dot active" id="dot1"></div>
+            <div class="form-step-dot" id="dot2"></div>
+            <span class="form-step-label" id="stepLabel">Step 1 of 2 — Your Contact Details</span>
           </div>
-          <p class="form-note">📍 Packages start from <strong>₹90,000 for a single-day wedding</strong>. We respond within 24 hours via WhatsApp or email.<br/>Already decided? <a href="https://wa.me/919711177034?text=Hi!%20I'd%20like%20to%20book%20KB%20Studio%20for%20my%202026%2F27%20wedding." target="_blank">Book directly on WhatsApp →</a></p>
+
+          <!-- STEP 1: Contact -->
+          <div class="form-step-panel active" id="step1">
+            <div class="form-box">
+              <div class="form-grid">
+                <div class="fg"><label>Your Name *</label><input type="text" id="f_name" name="name" placeholder="Your full name" required/></div>
+                <div class="fg"><label>Partner's Name</label><input type="text" id="f_partner" name="partner" placeholder="Partner's name"/></div>
+                <div class="fg"><label>WhatsApp Number *</label><input type="tel" id="f_phone" name="phone" placeholder="+91 97111 77034" required/></div>
+                <div class="fg"><label>Email Address *</label><input type="email" id="f_email" name="email" placeholder="your@email.com" required/></div>
+              </div>
+              <div class="form-btn-row">
+                <button type="button" class="form-next" id="toStep2" onclick="goStep2()">
+                  Continue — Wedding Details
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Wedding Details -->
+          <div class="form-step-panel" id="step2">
+            <div class="form-box">
+              <div class="form-grid">
+                <div class="fg"><label>Wedding Date</label><input type="date" id="f_date" name="date" style="color-scheme:light"/></div>
+                <div class="fg"><label>City / Venue *</label><input type="text" id="f_venue" name="venue" placeholder="e.g. Udaipur, Dubai, Bali" required/></div>
+
+                <div class="fg"><label>Approximate Budget</label>
+                  <select id="f_budget" name="budget">
+                    <option value="" disabled selected>Select your range</option>
+                    <option>Under ₹1.5 Lakh</option>
+                    <option>₹1.5L – ₹3L</option>
+                    <option>₹3L – ₹6L</option>
+                    <option>₹6L – ₹10L</option>
+                    <option>₹10L+ (Luxury / Destination)</option>
+                  </select>
+                </div>
+                <div class="fg"><label>When Are You Looking to Book?</label>
+                  <select id="f_timeline" name="timeline">
+                    <option value="" disabled selected>Select timeline</option>
+                    <option>This week — ready to confirm</option>
+                    <option>Within a month</option>
+                    <option>In the next 3 months</option>
+                    <option>Just exploring options</option>
+                  </select>
+                </div>
+                <div class="fg"><label>How Did You Find Us?</label>
+                  <select id="f_source" name="source">
+                    <option value="" disabled selected>Select one</option>
+                    <option>Instagram Ad</option>
+                    <option>Facebook Ad</option>
+                    <option>Instagram Profile / Explore</option>
+                    <option>Google Search</option>
+                    <option>Friend / Family Referral</option>
+                    <option>Wedding Planner</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="fg full"><label>Anything Special We Should Know?</label>
+                  <textarea id="f_message" name="message" placeholder="Venues, functions, destination details, special requirements…"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="form-submit" id="submitBtn">
+                <span id="submitText">Send My Enquiry</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+              <div class="form-btn-row" style="margin-top:10px">
+                <button type="button" class="form-prev" onclick="goStep1()">&#8592; Back</button>
+              </div>
+            </div>
+            <p class="form-note">We respond within 24 hours via WhatsApp or email.<br/>Already decided? <a href="https://wa.me/919711177034?text=Hi!%20I'd%20like%20to%20book%20KB%20Studio%20for%20my%20wedding." target="_blank">Book directly on WhatsApp →</a></p>
+          </div>
         </form>
       </div>
       <div id="successMsg">
         <div class="sc">✓</div>
-        <h3 class="sh">Enquiry Received</h3>
-        <p class="sp">Thank you — we've received your details and will be in touch within 24 hours. In the meantime, come say hello on Instagram.</p>
-        <a class="btn-fill" href="https://ig.me/m/kbstudioproductions" target="_blank" style="margin-top:10px;width:fit-content">Message Us on Instagram →</a>
+        <h3 class="sh">Enquiry Received!</h3>
+        <p class="sp">Thank you — we've received your details and will be in touch within 24 hours on WhatsApp or email. We look forward to being part of your celebration.</p>
+        <a class="btn-fill" href="https://wa.me/919711177034?text=Hi!%20I%20just%20filled%20the%20enquiry%20form%20for%20KB%20Studio." target="_blank" style="margin-top:10px;width:fit-content">Also Message Us on WhatsApp →</a>
       </div>
     </div>
   </div>
@@ -549,20 +644,20 @@ footer{background:var(--ink);padding:28px 6vw;display:flex;justify-content:space
   </div>
 </footer>
 
-<!-- FLOATING IG BUTTON (desktop) -->
+<!-- FLOATING WA BUTTON (desktop) -->
 <div class="ig-float">
-  <a href="https://ig.me/m/kbstudioproductions" target="_blank" title="DM us on Instagram">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+  <a href="https://wa.me/919711177034?text=Hi!%20I'd%20like%20to%20enquire%20about%20KB%20Studio%20for%20my%20wedding." target="_blank" title="WhatsApp us">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
-  <span>DM Us</span>
+  <span>WhatsApp</span>
 </div>
 
 <!-- STICKY MOBILE BOTTOM BAR -->
 <div class="ig-sticky">
-  <p class="ig-sticky-text">Ready to Book Your 2026–27 Wedding?</p>
-  <a class="ig-sticky-btn" href="https://ig.me/m/kbstudioproductions" target="_blank">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-    Message KB Studio on Instagram
+  <p class="ig-sticky-text">Ready to book your 2026–27 wedding?</p>
+  <a class="ig-sticky-btn" href="https://wa.me/919711177034?text=Hi!%20I'd%20like%20to%20enquire%20about%20KB%20Studio%20for%20my%20wedding." target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp KB Studio Now
   </a>
 </div>
 
@@ -625,26 +720,157 @@ setTimeout(()=>{
 function closePopup(){document.getElementById('exitPopup').classList.remove('show')}
 document.getElementById('exitPopup').addEventListener('click',(e)=>{if(e.target===e.currentTarget)closePopup()});
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxfjdV5bAT8uB3sjUsptEAb5_-F2Piv7JK0w7nJ-nbt-hxmNqfNFQC6EJx3Opoop9ficw/exec';
+// --- Smooth Scroll to Enquire for Availability buttons ---
+document.querySelectorAll('a[href="#enquire"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.getElementById('enquire');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
 
+// --- Multi-step Form Navigation & Validation ---
+function goStep2() {
+  const name = document.getElementById('f_name');
+  const phone = document.getElementById('f_phone');
+  const email = document.getElementById('f_email');
+  let valid = true;
+
+  // Validate Name
+  if (!name.value.trim()) {
+    name.closest('.fg').style.background = 'rgba(192,57,43,.05)';
+    valid = false;
+  } else {
+    name.closest('.fg').style.background = '';
+  }
+
+  // Validate Phone (at least 8 digits)
+  if (!phone.value.trim() || phone.value.replace(/\D/g, '').length < 8) {
+    phone.closest('.fg').style.background = 'rgba(192,57,43,.05)';
+    valid = false;
+  } else {
+    phone.closest('.fg').style.background = '';
+  }
+
+  // Validate Email
+  const emailVal = email.value.trim();
+  if (!emailVal || !emailVal.includes('@') || !emailVal.includes('.')) {
+    email.closest('.fg').style.background = 'rgba(192,57,43,.05)';
+    valid = false;
+  } else {
+    email.closest('.fg').style.background = '';
+  }
+
+  if (!valid) return;
+
+  document.getElementById('step1').classList.remove('active');
+  document.getElementById('step2').classList.add('active');
+  document.getElementById('dot1').classList.remove('active');
+  document.getElementById('dot2').classList.add('active');
+  document.getElementById('stepLabel').textContent = 'Step 2 of 2 — Wedding Details';
+}
+
+function goStep1() {
+  document.getElementById('step2').classList.remove('active');
+  document.getElementById('step1').classList.add('active');
+  document.getElementById('dot2').classList.remove('active');
+  document.getElementById('dot1').classList.add('active');
+  document.getElementById('stepLabel').textContent = 'Step 1 of 2 — Your Contact Details';
+}
+
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqn7a5lcsW1CJZB0fMpLRaKf8WL4uQk-MSh-lD2kNXUNTk1HZgamQe4CuBS1fGcnUo/exec';
+
+// Submit Form
 async function submitForm(e){
   e.preventDefault();
   const form=e.target,btn=document.getElementById('submitBtn'),txt=document.getElementById('submitText');
 
-  // Validate
+  // Validate all required fields
   let valid=true;
+  let firstInvalid = null;
   form.querySelectorAll('[required]').forEach(f=>{
-    if(!f.value.trim()){f.closest('.fg').style.background='rgba(192,57,43,.05)';valid=false;}
+    if(!f.value.trim()){
+      f.closest('.fg').style.background='rgba(192,57,43,.05)';
+      valid=false;
+      if(!firstInvalid) firstInvalid = f;
+    }
     else f.closest('.fg').style.background='';
   });
-  if(!valid) return;
+
+  if(!valid) {
+    // If the first invalid field is in Step 1, go back to Step 1
+    if (firstInvalid && document.getElementById('step1').contains(firstInvalid)) {
+      goStep1();
+    }
+    return;
+  }
 
   btn.disabled=true; txt.textContent='Sending…';
-  const d=Object.fromEntries(new FormData(form).entries());
+  
+  // Package form data mapping plain keys, f_ prefixed keys, and exact column label strings
+  const d = {
+    // ID based
+    f_name: document.getElementById('f_name').value,
+    f_partner: document.getElementById('f_partner').value,
+    f_phone: document.getElementById('f_phone').value,
+    f_email: document.getElementById('f_email').value,
+    f_date: document.getElementById('f_date').value,
+    f_venue: document.getElementById('f_venue').value,
+    f_budget: document.getElementById('f_budget').value,
+    f_timeline: document.getElementById('f_timeline').value,
+    f_source: document.getElementById('f_source').value,
+    f_message: document.getElementById('f_message').value,
+    
+    // Simple names
+    name: document.getElementById('f_name').value,
+    partner: document.getElementById('f_partner').value,
+    phone: document.getElementById('f_phone').value,
+    email: document.getElementById('f_email').value,
+    date: document.getElementById('f_date').value,
+    venue: document.getElementById('f_venue').value,
+    budget: document.getElementById('f_budget').value,
+    timeline: document.getElementById('f_timeline').value,
+    source: document.getElementById('f_source').value,
+    message: document.getElementById('f_message').value,
+
+    // Full label names (matching Google Sheet column headers)
+    "Your Name": document.getElementById('f_name').value,
+    "Your Name *": document.getElementById('f_name').value,
+    "Partner's Name": document.getElementById('f_partner').value,
+    "WhatsApp Number": document.getElementById('f_phone').value,
+    "WhatsApp Number *": document.getElementById('f_phone').value,
+    "Email Address": document.getElementById('f_email').value,
+    "Email Address *": document.getElementById('f_email').value,
+    "Wedding Date": document.getElementById('f_date').value,
+    "City / Venue": document.getElementById('f_venue').value,
+    "City / Venue *": document.getElementById('f_venue').value,
+    "Approximate Budget": document.getElementById('f_budget').value,
+    "When Are You Looking to Book?": document.getElementById('f_timeline').value,
+    "How Did You Find Us?": document.getElementById('f_source').value,
+    "Anything Special We Should Know?": document.getElementById('f_message').value
+  };
 
   try{
-    // Send to Google Sheets
-    await fetch(SCRIPT_URL, {
+    // Fire Meta Pixel Lead event
+    if(typeof fbq === 'function'){
+      fbq('track', 'Lead', {
+        content_name: 'Wedding Enquiry',
+        value: d.budget || 'Unknown',
+        currency: 'INR'
+      });
+    }
+
+    // Append URL parameters to satisfy e.parameter parsing
+    const searchParams = new URLSearchParams();
+    for (const key in d) {
+      searchParams.append(key, d[key]);
+    }
+    const targetUrl = SCRIPT_URL + '?' + searchParams.toString();
+
+    // Send to Google Sheets as JSON body to satisfy e.postData.contents parsing
+    await fetch(targetUrl, {
       method:'POST',
       mode:'no-cors',
       headers:{'Content-Type':'application/json'},
@@ -657,6 +883,10 @@ async function submitForm(e){
     showSuccess();
   }
 }
+
+// Bind form submit
+document.getElementById('enquiryForm').addEventListener('submit', submitForm);
+
 function showSuccess(){
   document.getElementById('formWrap').style.display='none';
   document.getElementById('successMsg').classList.add('show');
