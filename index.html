@@ -1144,20 +1144,30 @@ async function submitForm(e){
       body:JSON.stringify(d)
     });
     // no-cors = opaque response, data is saved regardless
-    showSuccess();
+    showSuccess(d);
   }catch(err){
     // Even if fetch fails, show success — data likely saved
-    showSuccess();
+    showSuccess(d);
   }
 }
 
 // Bind form submit
 document.getElementById('enquiryForm').addEventListener('submit', submitForm);
 
-function showSuccess(){
+function showSuccess(d={}){
   document.getElementById('formWrap').style.display='none';
   document.getElementById('successMsg').classList.add('show');
-  setTimeout(()=>window.open('https://ig.me/m/kbstudioproductions?text=Hi%20KB%20Studio!%20I%20would%20like%20to%20enquire%20about%20your%20services%20and%20availability%20for%20my%20wedding.','_blank'),1800);
+  
+  const name = d.name || '';
+  const date = d.date || 'TBD';
+  const venue = d.venue || 'TBD';
+  const duration = d.event_days || 'TBD';
+  const services = d.services || 'TBD';
+  const budget = d.budget || 'TBD';
+  
+  const msg = encodeURIComponent(`Hi KB Studio! I just submitted my enquiry on your website.\n\n✨ Details:\n• Name: ${name}\n• Date: ${date}\n• Venue: ${venue}\n• Duration: ${duration}\n• Services: ${services}\n• Budget: ${budget}`);
+  
+  setTimeout(()=>window.open(`https://ig.me/m/kbstudioproductions?text=${msg}`,'_blank'),1800);
 }
 function fallbackWA(d={}){const raw=d||{};
   const msg=encodeURIComponent(`Hi KB Studio! Enquiry from ${d.name}\nPhone: ${d.phone}\nDate: ${d.date||'TBD'}\nVenue: ${d.venue||'TBD'}\nDuration: ${d.event_days||'TBD'}\nCall Pref: ${d.call_time||'TBD'}\nServices: ${d.services}\nBudget: ${d.budget||'TBD'}\nMessage: ${d.message||'—'}`);
