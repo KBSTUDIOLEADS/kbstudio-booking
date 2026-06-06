@@ -373,6 +373,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .fg.full{grid-column:1/-1;border-right:none}
 .fg label{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .fg input,.fg select,.fg textarea{background:none;border:none;outline:none;font-family:'Jost',sans-serif;font-size:15.5px;font-weight:400;color:var(--ink);width:100%;-webkit-appearance:none;border-radius:0}
+.fg input[type="date"]{-webkit-appearance:listbox;min-height:23px;color:var(--ink)}
 .fg input::placeholder,.fg textarea::placeholder{color:rgba(13,11,8,.35)}
 .fg select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23B08D57' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:18px}
 .fg select option{background:#fff;color:var(--ink)}
@@ -832,8 +833,8 @@ footer{background:var(--ink);padding:28px 6vw;display:flex;justify-content:space
                     <option>Other</option>
                   </select>
                 </div>
-                <div class="fg full"><label>Preferred Call Date & Time *</label>
-                  <input type="text" id="f_call_time" name="call_time" placeholder="e.g. Sunday 14th June, around 5 PM" required/>
+                <div class="fg full"><label>Preferred Call Date & Time</label>
+                  <input type="text" id="f_call_time" name="call_time" placeholder="e.g. Sunday 14th June, around 5 PM"/>
                 </div>
                 <div class="fg full"><label>Anything Special We Should Know?</label>
                   <textarea id="f_message" name="message" placeholder="Venues, functions, destination details, special requirements…"></textarea>
